@@ -5,13 +5,13 @@ import rospy
 from std_msgs.msg import String
 
 
-
-def callback(str):
-    rospy.loginfo(std)
+def callback(data):
+    print 'Got callback!'
+    rospy.loginfo(data.data)
 
 
 def listener():
-    rospy.init_node('listener', anonymous=True)
+    rospy.init_node('listener', anonymous=False)
     rospy.Subscriber('/speech', String, callback)
     rospy.spin()
 

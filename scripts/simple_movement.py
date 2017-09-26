@@ -118,7 +118,7 @@ if __name__ == '__main__':
 
     ssc32 = serial.Serial('/dev/rfcomm0', 115200);
 
-    print "connected. press '0 + Enter' to move the arm: "
+    print "Connected. press '0 + Enter' to move the arm: "
     init_bottun = raw_input('>>>  ')
 
     if init_bottun == '0':
@@ -128,37 +128,26 @@ if __name__ == '__main__':
         print "Ok"
         time.sleep(1.5)
 
+        print "Start operation to press '1 + Enter': "
+        start_bottun = raw_input('>>>  ')
 
-        print "input motion number."
-        print "1: move to grasp, 2: grasp, 3: turn right, 4: turn left,"
-        print "5: move to put, 6: put, 7: return to initial position"
+        if start_bottun == '1':
+            print "motion requested..."
 
-        for i in range(7):
+            move_to_grasp()
+            grasp()
+            turn_back_ini()
+            #turn_right()
+            turn_left()
+            move_to_put()
+            put()
+            turn_back_ini()
 
-            mode_serect = raw_input('Input command >>>  ')
+        else:
+            print "The input number is wrong."
+            print "Operation stopped"
 
-            if mode_serect == '1':
-                move_to_grasp()
-
-            elif mode_serect == '2':
-                grasp()
-
-            elif mode_serect == '3':
-                turn_right()
-
-            elif mode_serect == '4':
-                turn_left()
-
-            elif mode_serect == '5':
-                move_to_put()
-
-            elif mode_serect == '6':
-                put()
-
-            elif mode_serect == '7':
-                turn_back_ini()
-
-     else:
+    else:
         print "Operation canceled"
 
     ssc32.close()

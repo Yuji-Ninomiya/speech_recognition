@@ -8,12 +8,17 @@ class SpeechRecognition(object):
     def __init__(self):
         rospy.Subscriber('/Tablet/voice', SpeechRecognitionCandidates, self.callback)
         self.pub_ = rospy.Publisher('/speech', String, queue_size=1)
-        self.num_list = ['1','2','3','4','5','6','7','8','9']
+        #self.num_list = ['1','2','3','4','5','6','7','8','9']
         print SpeechRecognitionCandidates
 
     def callback(self, msg):
         rospy.loginfo('{} ({})'.format(msg.transcript[0], msg.confidence[0]))
         raw_msg = str()
+        if msg.confidence[0] >0.5:
+            raw_msg = msg.transcript[0]
+            self.pub_.publish(raw_msg)
+
+        """
         pub_msg = str()
         if msg.confidence[0] > 0.9 :
             raw_msg = msg.transcript[0]
@@ -22,7 +27,7 @@ class SpeechRecognition(object):
                     pub_msg += data
             if len(pub_msg) == 2:
                 self.pub_.publish(pub_msg)
-    
+        """
 
 if __name__ == '__main__':
     rospy.init_node('speech_recognition')
