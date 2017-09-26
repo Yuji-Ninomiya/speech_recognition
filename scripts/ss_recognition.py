@@ -14,7 +14,7 @@ class SpeechRecognition(object):
     def callback(self, msg):
         rospy.loginfo('{} ({})'.format(msg.transcript[0], msg.confidence[0]))
         raw_msg = str()
-        if msg.confidence[0] >0.5:
+        if msg.confidence[0] > 0.5:
             raw_msg = msg.transcript[0]
             self.pub_.publish(raw_msg)
 

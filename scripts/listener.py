@@ -5,9 +5,13 @@ import rospy
 from std_msgs.msg import String
 
 
-def callback(data):
+def callback(str):
     print 'Got callback!'
-    rospy.loginfo(data.data)
+    rospy.loginfo(str.data)
+
+    input = str.data
+    print 'show input data'
+    print(input)
 
 
 def listener():
@@ -18,4 +22,6 @@ def listener():
 if __name__ == '__main__':
 
     listener()
+    print 'end'
+
     

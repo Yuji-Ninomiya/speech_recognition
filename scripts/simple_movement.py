@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import serial
 import time
@@ -8,8 +9,7 @@ import math as m
 import time
 
 import rospy
-#from sensor_msgs.msg import JointState
-#from std_msgs.msg import String
+from std_msgs.msg import String
 
 
 interval = 2.0
@@ -35,7 +35,7 @@ def move_to_grasp():
     ssc32.write("#3 P2200 T1000\r")
     ssc32.write("#4 P800 T1000\r")
 
-    print "Successed 'move to grasp'"
+    print "'Move to grasp'"
     time.sleep(interval)
 
 def grasp():
@@ -47,7 +47,7 @@ def grasp():
     ssc32.write("#3 P2200 T1000\r")
     ssc32.write("#4 P1500 T1000\r")
 
-    print "Successed 'grasp'"
+    print "'Grasp'"
     time.sleep(interval)
 
 def turn_back_ini():
@@ -60,7 +60,7 @@ def turn_back_ini():
     ssc32.write("#3 P2200 T1500\r")
     ssc32.write("#4 P1500 T1500\r")
 
-    print "'return to initial position'"
+    print "'Return to initial position'"
     time.sleep(interval)
 
 def turn_right():
@@ -73,7 +73,7 @@ def turn_right():
     ssc32.write("#3 P2200 T1000\r")
     ssc32.write("#4 P1500 T1000\r")
 
-    print "'turn right"
+    print "'Turn right"
     time.sleep(interval)
 
 def turn_left():
@@ -86,7 +86,7 @@ def turn_left():
     ssc32.write("#3 P2200 T1000\r")
     ssc32.write("#4 P1500 T1000\r")
 
-    print "'turn left"
+    print "'Turn left"
     time.sleep(interval)
 
 def move_to_put():
@@ -98,7 +98,7 @@ def move_to_put():
     ssc32.write("#3 P2200 T1000\r")
     ssc32.write("#4 P1500 T1000\r")
 
-    print "'move to put'"
+    print "'Move to put'"
     time.sleep(interval)
 
 def put():
@@ -110,8 +110,35 @@ def put():
     ssc32.write("#3 P2200 T1000\r")
     ssc32.write("#4 P800 T1000\r")
 
-    print "'put'"
+    print "'Put'"
     time.sleep(interval)
+
+
+def callback(str):
+
+    print 'Got your voice!!'
+    rospy.loginfo(str.data)
+
+    input = str.data
+
+    if input == 'I':
+
+        move_to_grasp()
+        grasp()
+        turn_back_ini()
+        #turn_right()
+        turn_left()
+        move_to_put()
+        put()
+        turn_back_ini()
+
+    else:
+        print 'Miss...'
+
+def listener():
+    rospy.init_node('listener', anonymous=False)
+    rospy.Subscriber('/speech', String, callback)
+    rospy.spin()
 
 
 if __name__ == '__main__':
@@ -122,30 +149,13 @@ if __name__ == '__main__':
     init_bottun = raw_input('>>>  ')
 
     if init_bottun == '0':
-
         init_arm(ssc32)
-
         print "Ok"
         time.sleep(1.5)
 
-        print "Start operation to press '1 + Enter': "
-        start_bottun = raw_input('>>>  ')
+        print "Please speech to the mic: "
 
-        if start_bottun == '1':
-            print "motion requested..."
-
-            move_to_grasp()
-            grasp()
-            turn_back_ini()
-            #turn_right()
-            turn_left()
-            move_to_put()
-            put()
-            turn_back_ini()
-
-        else:
-            print "The input number is wrong."
-            print "Operation stopped"
+        listener()
 
     else:
         print "Operation canceled"
