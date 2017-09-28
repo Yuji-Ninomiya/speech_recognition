@@ -21,21 +21,18 @@ student@vaio:~$ source ~/.bashrc
 3. Also you have to install the package:  rwt_speech_recognition packages:  see
 https://github.com/tork-a/visualization_rwt/tree/hydro-devel/rwt_speech_recognition (It should be installed the same directoly you made that named 'catkin_ws').
 
-		You need to make the following changes to files in this package to use Italian recognition.
+	You need to make the following changes to files in this package to use Italian recognition.
 
-```bash
-Add file "it-IT.json" to "visualization_rwt/rwt_speech_recognition/www/locale". Please move to there from my repositoly named "speech_recognition/www/locale".
+	・Add file "it-IT.json" to "visualization_rwt/rwt_speech_recognition/www/locale". Please move to there from my repositoly named "speech_recognition/www/locale".
 
-Change the file "visualization_rwt/rwt_speech_recognition/www/i18n.js", line.26
-	var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
+	・Change the file "visualization_rwt/rwt_speech_recognition/www/i18n.js", line.26
+		var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
 
-Add sentence to "index.html" in "visualization_rwt/rwt_speech_recognition/www/", line 28
-	<li data-value="it-IT"><a href="#">Italian</a></li>
+	・Add sentence to "index.html" in "visualization_rwt/rwt_speech_recognition/www/", line 28
+		<li data-value="it-IT"><a href="#">Italian</a></li>
 
-
-change the file "visualization_rwt/rwt_speech_recognition/www/rwt_speech_recognition.js", line 46
-	speech_recog.lang = 'ja-JP';  ===>  speech_recog.lang = 'it-IT';
-```
+	・change the file "visualization_rwt/rwt_speech_recognition/www/rwt_speech_recognition.js", line 46
+		speech_recog.lang = 'ja-JP';  ===>  speech_recog.lang = 'it-IT';
 
 ### How to use
 
