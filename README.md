@@ -1,10 +1,12 @@
 # Speech_recognition
 This is the research at University of Salento 2017.
 
+---------------------------------------------------------------
+
 ## Set up
 1. Install ROS packages
 
-	if there is no directory, at first you have to make that:see http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+	if there is no directory, at first you have to make that: see http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 
 2. In your Catkin workspace, install the package with the following commands.
 
@@ -21,6 +23,8 @@ student@vaio:~$ source ~/.bashrc
 
 3. Also you have to install the package:  rwt_speech_recognition packages:  see
 https://github.com/tork-a/visualization_rwt/tree/hydro-devel/rwt_speech_recognition (It should be installed the same directoly you made that named 'catkin_ws').
+
+---------------------------------------------------------------
 
 ## Attention
 
@@ -44,6 +48,8 @@ var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
 ```bash
 speech_recog.lang = 'ja-JP';  ===>  speech_recog.lang = 'it-IT';
 ```
+
+---------------------------------------------------------------
 
 ## How to use
 
