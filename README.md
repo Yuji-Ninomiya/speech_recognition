@@ -22,7 +22,7 @@ student@vaio:~$ source ~/.bashrc
 ```
 
 3. Also you have to install the package:  rwt_speech_recognition packages:  see
-https://github.com/tork-a/visualization_rwt/tree/hydro-devel/rwt_speech_recognition (It should be installed the same directoly you made that named 'catkin_ws').
+https://github.com/tork-a/visualization_rwt/tree/hydro-devel/rwt_speech_recognition (It should be installed the same directoly you made that named 'catkin_ws/src').
 
 ---------------------------------------------------------------
 
@@ -47,6 +47,12 @@ var lang = l || 'jp-JP';  --->  var lang = l || 'it-IT';
 4. change the file ```visualization_rwt/rwt_speech_recognition/www/rwt_speech_recognition.js```, line 46
 ```bash
 speech_recog.lang = 'ja-JP';  --->  speech_recog.lang = 'it-IT';
+```
+
+Finaly, you need to compile
+```bash
+student@vaio:~$ cd ~/catkin_ws
+student@vaio:~$ catkin_make
 ```
 
 ---------------------------------------------------------------
