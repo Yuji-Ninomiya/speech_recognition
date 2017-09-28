@@ -36,7 +36,7 @@ Please move that file to there from my repositoly named ```speech_recognition/ww
 
 2. Change the file ```visualization_rwt/rwt_speech_recognition/www/i18n.js```, line 26
 ```bash
-var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
+var lang = l || 'jp-JP';  --->  var lang = l || 'it-IT';
 ```
 
 3. Add sentence to ```index.html``` in ```visualization_rwt/rwt_speech_recognition/www/```, line 28
@@ -46,7 +46,7 @@ var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
 
 4. change the file ```visualization_rwt/rwt_speech_recognition/www/rwt_speech_recognition.js```, line 46
 ```bash
-speech_recog.lang = 'ja-JP';  ===>  speech_recog.lang = 'it-IT';
+speech_recog.lang = 'ja-JP';  --->  speech_recog.lang = 'it-IT';
 ```
 
 ---------------------------------------------------------------
