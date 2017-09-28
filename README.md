@@ -1,6 +1,7 @@
-# speech_recognition
+# Speech_recognition
 This is the research at University of Salento 2017.
 
+## Set up
 1. Install ROS packages
 
 if there is no directory, at first you have to make that:see http://wiki.ros.org/catkin/Tutorials/create_a_workspace
@@ -21,22 +22,25 @@ student@vaio:~$ source ~/.bashrc
 3. Also you have to install the package:  rwt_speech_recognition packages:  see
 https://github.com/tork-a/visualization_rwt/tree/hydro-devel/rwt_speech_recognition (It should be installed the same directoly you made that named 'catkin_ws').
 
-	You need to make the following changes to files in this package to use Italian recognition.
+## Attention
 
-	・Add file ```it-IT.json``` to ```visualization_rwt/rwt_speech_recognition/www/locale```. 
-	Please move to there from my repositoly named ```speech_recognition/www/locale```.
+You need to make the following changes to files in this package to use Italian recognition.
 
-	・Change the file ```visualization_rwt/rwt_speech_recognition/www/i18n.js```, line 26
+・Add file ```it-IT.json``` to ```visualization_rwt/rwt_speech_recognition/www/locale```. 
+
+Please move to there from my repositoly named ```speech_recognition/www/locale```.
+
+・Change the file ```visualization_rwt/rwt_speech_recognition/www/i18n.js```, line 26
 ```bash
 var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
 ```
 
-	・Add sentence to ```index.html``` in ```visualization_rwt/rwt_speech_recognition/www/```, line 28
+・Add sentence to ```index.html``` in ```visualization_rwt/rwt_speech_recognition/www/```, line 28
 ```bash
 <li data-value="it-IT"><a href="#">Italian</a></li>
 ```
 
-	・change the file ```visualization_rwt/rwt_speech_recognition/www/rwt_speech_recognition.js```, line 46
+・change the file ```visualization_rwt/rwt_speech_recognition/www/rwt_speech_recognition.js```, line 46
 ```bash
 speech_recog.lang = 'ja-JP';  ===>  speech_recog.lang = 'it-IT';
 ```
