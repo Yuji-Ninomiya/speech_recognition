@@ -4,7 +4,7 @@ This is the research at University of Salento 2017.
 ## Set up
 1. Install ROS packages
 
-if there is no directory, at first you have to make that:see http://wiki.ros.org/catkin/Tutorials/create_a_workspace
+	if there is no directory, at first you have to make that:see http://wiki.ros.org/catkin/Tutorials/create_a_workspace
 
 2. In your Catkin workspace, install the package with the following commands.
 
