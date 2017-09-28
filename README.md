@@ -32,7 +32,7 @@ You need to make the following changes to files in this package to use Italian r
 
 ・Add file ```it-IT.json``` to ```visualization_rwt/rwt_speech_recognition/www/locale```. 
 
-	Please move to there from my repositoly named ```speech_recognition/www/locale```.
+   Please move to there from my repositoly named ```speech_recognition/www/locale```.
 
 ・Change the file ```visualization_rwt/rwt_speech_recognition/www/i18n.js```, line 26
 ```bash
