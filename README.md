@@ -23,7 +23,8 @@ https://github.com/tork-a/visualization_rwt/tree/hydro-devel/rwt_speech_recognit
 
 	You need to make the following changes to files in this package to use Italian recognition.
 
-	・Add file "it-IT.json" to "visualization_rwt/rwt_speech_recognition/www/locale". Please move to there from my repositoly named "speech_recognition/www/locale".
+	・Add file ```it-IT.json``` to ```visualization_rwt/rwt_speech_recognition/www/locale```. 
+	Please move to there from my repositoly named "speech_recognition/www/locale".
 
 	・Change the file "visualization_rwt/rwt_speech_recognition/www/i18n.js", line.26
 		var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
