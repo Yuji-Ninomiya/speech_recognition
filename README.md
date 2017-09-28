@@ -29,6 +29,6 @@ student@vaio:~$ source ~/.bashrc
 ```bash
 roscore
 roslaunch rwt_speech_recognition speech_recognition.launch
-rosrun speech_recognition simple_movement.py
 rosrun speech_recognition ss_recognition.py
+rosrun speech_recognition simple_movement.py
 ```
