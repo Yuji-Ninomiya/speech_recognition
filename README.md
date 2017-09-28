@@ -49,7 +49,7 @@ var lang = l || 'jp-JP';  --->  var lang = l || 'it-IT';
 speech_recog.lang = 'ja-JP';  --->  speech_recog.lang = 'it-IT';
 ```
 
-Finaly, you need to compile
+Finally, you need to compile
 ```bash
 student@vaio:~$ cd ~/catkin_ws
 student@vaio:~$ catkin_make
