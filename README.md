@@ -41,7 +41,7 @@ var lang = l || 'jp-JP';  ===>  var lang = l || 'it-IT';
 speech_recog.lang = 'ja-JP';  ===>  speech_recog.lang = 'it-IT';
 ```
 
-### How to use
+## How to use
 
 1. Open terminal and separate that.
 2. Connect to the robot with bluetooth. Please refer to here:https://github.com/TakakiNishio/al5d/tree/master/src/python
